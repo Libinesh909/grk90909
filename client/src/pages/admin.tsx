@@ -119,20 +119,19 @@ export default function Admin() {
                 </div>
 
                 <div>
-                  <Label className="text-gaming-cyan font-bold">Game</Label>
+                  <Label className="text-gaming-cyan font-bold">Game Mode</Label>
                   <Select
                     value={tournamentForm.game}
                     onValueChange={(value) => setTournamentForm({ ...tournamentForm, game: value })}
                   >
                     <SelectTrigger className="bg-gaming-dark border-gaming-green/30 text-white">
-                      <SelectValue placeholder="Select game" />
+                      <SelectValue placeholder="Select Free Fire mode" />
                     </SelectTrigger>
                     <SelectContent className="bg-gaming-purple border-gaming-green/30">
-                      <SelectItem value="pubg">PUBG Mobile</SelectItem>
-                      <SelectItem value="freefire">Free Fire</SelectItem>
-                      <SelectItem value="cod">COD Mobile</SelectItem>
-                      <SelectItem value="valorant">Valorant</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="freefire-br">Battle Royale</SelectItem>
+                      <SelectItem value="freefire-cs">Clash Squad</SelectItem>
+                      <SelectItem value="freefire-ranked">Ranked Match</SelectItem>
+                      <SelectItem value="freefire-custom">Custom Room</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

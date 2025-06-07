@@ -7,7 +7,7 @@ export const users = pgTable("users", {
   username: text("username").notNull().unique(),
   email: text("email").notNull().unique(),
   phone: text("phone").notNull(),
-  preferredGame: text("preferred_game").notNull(),
+  preferredGame: text("preferred_game").notNull().default("freefire"),
   experience: text("experience"),
   isAdmin: boolean("is_admin").default(false),
   createdAt: timestamp("created_at").defaultNow(),
@@ -16,7 +16,7 @@ export const users = pgTable("users", {
 export const tournaments = pgTable("tournaments", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
-  game: text("game").notNull(),
+  game: text("game").notNull().default("freefire"),
   startTime: timestamp("start_time").notNull(),
   endTime: timestamp("end_time"),
   entryFee: decimal("entry_fee").default("10"),

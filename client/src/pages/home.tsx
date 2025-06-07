@@ -25,7 +25,7 @@ export default function Home() {
             </h2>
             <div className="w-32 h-1 bg-gaming-green mx-auto mb-8"></div>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300">
-              Join the ultimate gaming community. Compete in tournaments, climb the leaderboards, and prove your skills in the arena.
+              The ultimate Free Fire gaming community. Compete in exclusive tournaments, climb the leaderboards, and dominate the battlefield.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/tournaments">
@@ -34,7 +34,7 @@ export default function Home() {
                   JOIN TOURNAMENT
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/register">
                 <Button 
                   variant="outline" 
                   className="border-gaming-green text-gaming-green hover:bg-gaming-green hover:text-gaming-dark px-8 py-4 text-lg font-bold"

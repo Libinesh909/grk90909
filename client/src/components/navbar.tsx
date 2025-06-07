@@ -10,6 +10,7 @@ export default function Navbar() {
   const navItems = [
     { path: "/", label: "HOME" },
     { path: "/tournaments", label: "TOURNAMENTS" },
+    { path: "/register", label: "REGISTER" },
     { path: "/payment", label: "PAYMENT" },
     { path: "/contact", label: "CONTACT US" },
   ];
