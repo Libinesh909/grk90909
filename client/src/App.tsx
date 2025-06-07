@@ -10,6 +10,7 @@ import Admin from "@/pages/admin";
 import Payment from "@/pages/payment";
 import Contact from "@/pages/contact";
 import Register from "@/pages/register";
+import AdminLogin from "@/pages/admin-login";
 import Navbar from "@/components/navbar";
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
         <Route path="/tournaments" component={Tournaments} />
         <Route path="/register" component={Register} />
         <Route path="/admin" component={Admin} />
+        <Route path="/admin-login" component={AdminLogin} />
         <Route path="/payment" component={Payment} />
         <Route path="/contact" component={Contact} />
         <Route component={NotFound} />

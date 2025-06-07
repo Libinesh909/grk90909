@@ -61,6 +61,9 @@ export const insertUserSchema = createInsertSchema(users).omit({
 export const insertTournamentSchema = createInsertSchema(tournaments).omit({
   id: true,
   createdAt: true,
+}).extend({
+  startTime: z.coerce.date(),
+  endTime: z.coerce.date().optional().nullable(),
 });
 
 export const insertRegistrationSchema = createInsertSchema(registrations).omit({

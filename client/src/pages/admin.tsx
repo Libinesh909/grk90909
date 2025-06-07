@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,8 +8,17 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { Shield, Plus, Users, Trophy, Clock } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function Admin() {
+  const [, navigate] = useLocation();
+
+  useEffect(() => {
+    const isAdmin = localStorage.getItem("isAdmin");
+    if (!isAdmin) {
+      navigate("/admin-login");
+    }
+  }, [navigate]);
   const { toast } = useToast();
   const queryClient = useQueryClient();
   const [tournamentForm, setTournamentForm] = useState({
@@ -19,7 +28,7 @@ export default function Admin() {
     maxPlayers: 100,
   });
 
-  const { data: tournaments } = useQuery({
+  const { data: tournaments = [] } = useQuery({
     queryKey: ["/api/tournaments"],
   });
 
@@ -183,25 +192,25 @@ export default function Admin() {
                 <div className="flex justify-between items-center">
                   <span className="text-gray-300">Active Tournaments</span>
                   <span className="text-gaming-green font-bold text-xl">
-                    {tournaments?.filter((t: any) => t.status === "active").length || 0}
+                    {tournaments.filter((t: any) => t.status === "active").length}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-300">Upcoming Tournaments</span>
                   <span className="text-gaming-cyan font-bold text-xl">
-                    {tournaments?.filter((t: any) => t.status === "upcoming").length || 0}
+                    {tournaments.filter((t: any) => t.status === "upcoming").length}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-300">Completed Tournaments</span>
                   <span className="text-gaming-orange font-bold text-xl">
-                    {tournaments?.filter((t: any) => t.status === "completed").length || 0}
+                    {tournaments.filter((t: any) => t.status === "completed").length}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-300">Total Registrations</span>
                   <span className="text-gaming-green font-bold text-xl">
-                    {tournaments?.reduce((sum: number, t: any) => sum + (t.playerCount || 0), 0) || 0}
+                    {tournaments.reduce((sum: number, t: any) => sum + (t.playerCount || 0), 0)}
                   </span>
                 </div>
               </div>

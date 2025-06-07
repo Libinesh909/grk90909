@@ -81,8 +81,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Admin route to create tournament
   app.post('/api/admin/tournaments', async (req, res) => {
     try {
-      const tournamentData = insertTournamentSchema.parse(req.body);
-      const tournament = await storage.createTournament(tournamentData);
+      const validatedData = insertTournamentSchema.parse(req.body);
+      const tournament = await storage.createTournament(validatedData);
       res.json(tournament);
     } catch (error) {
       console.error("Tournament creation error:", error);

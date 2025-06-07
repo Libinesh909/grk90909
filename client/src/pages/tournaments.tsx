@@ -10,14 +10,14 @@ import Leaderboard from "@/components/leaderboard";
 export default function Tournaments() {
   const [filter, setFilter] = useState("all");
 
-  const { data: tournaments, isLoading } = useQuery({
+  const { data: tournaments = [], isLoading } = useQuery({
     queryKey: ["/api/tournaments"],
   });
 
-  const filteredTournaments = tournaments?.filter((tournament: any) => {
+  const filteredTournaments = tournaments.filter((tournament: any) => {
     if (filter === "all") return true;
     return tournament.status === filter;
-  }) || [];
+  });
 
   if (isLoading) {
     return (
