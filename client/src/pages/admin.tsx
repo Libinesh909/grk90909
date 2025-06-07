@@ -28,7 +28,7 @@ export default function Admin() {
     maxPlayers: 100,
   });
 
-  const { data: tournaments = [] } = useQuery({
+  const { data: tournaments = [] } = useQuery<any[]>({
     queryKey: ["/api/tournaments"],
   });
 
@@ -228,7 +228,7 @@ export default function Admin() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {tournaments?.map((tournament: any) => (
+              {tournaments.map((tournament: any) => (
                 <div
                   key={tournament.id}
                   className="bg-gaming-dark/50 rounded-lg p-4 flex justify-between items-center"
@@ -262,7 +262,7 @@ export default function Admin() {
                   </div>
                 </div>
               ))}
-              {!tournaments?.length && (
+              {!tournaments.length && (
                 <div className="text-center py-8 text-gray-400">
                   No tournaments created yet. Create your first tournament above!
                 </div>

@@ -10,7 +10,7 @@ import Leaderboard from "@/components/leaderboard";
 export default function Tournaments() {
   const [filter, setFilter] = useState("all");
 
-  const { data: tournaments = [], isLoading } = useQuery({
+  const { data: tournaments = [], isLoading } = useQuery<any[]>({
     queryKey: ["/api/tournaments"],
   });
 
