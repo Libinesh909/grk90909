@@ -166,21 +166,11 @@ export default function Contact() {
                   </div>
                   <div>
                     <Label className="text-gaming-cyan font-bold">Preferred Game</Label>
-                    <Select
-                      value={registrationForm.preferredGame}
-                      onValueChange={(value) => setRegistrationForm({ ...registrationForm, preferredGame: value })}
-                    >
-                      <SelectTrigger className="bg-gaming-dark border-gaming-green/30 text-white">
-                        <SelectValue placeholder="Select Game" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-gaming-purple border-gaming-green/30">
-                        <SelectItem value="pubg">PUBG Mobile</SelectItem>
-                        <SelectItem value="freefire">Free Fire</SelectItem>
-                        <SelectItem value="cod">COD Mobile</SelectItem>
-                        <SelectItem value="valorant">Valorant</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <Input
+                      value="Free Fire"
+                      className="bg-gaming-dark border-gaming-green/30 text-white"
+                      disabled
+                    />
                   </div>
                 </div>
 

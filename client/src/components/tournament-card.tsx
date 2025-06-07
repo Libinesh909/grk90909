@@ -105,8 +105,10 @@ export default function TournamentCard({ tournament }: TournamentCardProps) {
         
         <div className="space-y-2 mb-4">
           <div className="flex justify-between">
-            <span className="text-gray-400">Game:</span>
-            <span className="text-white font-bold capitalize">{tournament.game}</span>
+            <span className="text-gray-400">Mode:</span>
+            <span className="text-white font-bold capitalize">
+              {tournament.game?.replace('freefire-', '').replace('br', 'Battle Royale').replace('cs', 'Clash Squad').replace('ranked', 'Ranked').replace('custom', 'Custom') || 'Free Fire'}
+            </span>
           </div>
           <div className="flex justify-between">
             <span className="text-gray-400">Entry Fee:</span>

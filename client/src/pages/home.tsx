@@ -64,7 +64,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-gaming text-xl font-bold mb-4 text-gaming-green">COMPETITIVE TOURNAMENTS</h3>
                 <p className="text-gray-300">
-                  Participate in regular tournaments across multiple games. Entry fee just ₹10 per tournament.
+                  Participate in exclusive Free Fire tournaments. Entry fee just ₹10 per tournament.
                 </p>
               </CardContent>
             </Card>

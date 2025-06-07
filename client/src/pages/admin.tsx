@@ -14,7 +14,7 @@ export default function Admin() {
   const queryClient = useQueryClient();
   const [tournamentForm, setTournamentForm] = useState({
     name: "",
-    game: "",
+    game: "freefire-br",
     startTime: "",
     maxPlayers: 100,
   });
@@ -33,7 +33,7 @@ export default function Admin() {
         description: "Tournament created successfully!",
       });
       queryClient.invalidateQueries({ queryKey: ["/api/tournaments"] });
-      setTournamentForm({ name: "", game: "", startTime: "", maxPlayers: 100 });
+      setTournamentForm({ name: "", game: "freefire-br", startTime: "", maxPlayers: 100 });
     },
     onError: () => {
       toast({

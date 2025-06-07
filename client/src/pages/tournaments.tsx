@@ -31,8 +31,8 @@ export default function Tournaments() {
     <div className="pt-20 min-h-screen">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h1 className="font-gaming text-4xl font-bold glow-text mb-4">TOURNAMENTS</h1>
-          <p className="text-xl text-gray-400">Battle for glory and climb the leaderboards</p>
+          <h1 className="font-gaming text-4xl font-bold glow-text mb-4">FREE FIRE TOURNAMENTS</h1>
+          <p className="text-xl text-gray-400">Dominate the battlefield and climb the leaderboards</p>
         </div>
 
         {/* Tournament Status Filter */}
